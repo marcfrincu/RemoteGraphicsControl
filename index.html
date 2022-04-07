@@ -1,0 +1,137 @@
+<html>
+    <head>
+	<title>Remote Graphics Controller</title>
+	<script type="text/javascript" src="ajax.js"></script>
+	<script type="text/javascript">
+	function changeDiv(option)
+	{
+		if (option == "single")
+		{
+
+			document.getElementById("single").style.display = "block";
+			document.getElementById("batch").style.display = "none";
+			document.getElementById("singlecomm").disabled = true;	
+			document.getElementById("batchcomm").disabled = false;	
+
+		}
+		if (option == "batch")
+		{
+			document.getElementById("single").style.display = "none";
+			document.getElementById("batch").style.display = "block";
+			document.getElementById("singlecomm").disabled = false;	
+			document.getElementById("batchcomm").disabled = true;	
+		}
+	}
+	function setMenus()
+	{
+			document.getElementById("single").style.display = "block";
+			document.getElementById("batch").style.display = "none";
+			document.getElementById("singlecomm").disabled = true;	
+			document.getElementById("batchcomm").disabled = false;	
+
+	}
+	</script>
+    <head>
+    <body style="margin:0px;padding:5px;font-size:10px;font-family:arial,verdana,sans-serif" onload="init();validate();setMenus();">
+	<table border="0" cellpadding="1" cellspacing="0" style="background-color:#cccccc;border:1px solid black;">
+		<tr>
+			<td>
+				<input type="button" value="Single Command" id="singlecomm" onclick="changeDiv('single');">
+			</td>
+			<td>
+				<input type="button" value="Batch Command" id="batchcomm" onclick="changeDiv('batch');">
+			</td>
+		</tr>
+	</table>
+	<div id="single">
+		<table id="command" border="0" cellpadding="0" cellspacing="1" style="border:1px solid blue;">
+			<tr>
+			<td colspan="4" style="background-color:#999999;padding:2px;text-align:center;font-weight:bold;">
+				Command Menu for Controlling the Remote Graphic Application
+			</td>
+			</tr>
+			<tr>
+			<td style="text-align:right;padding:1px;">
+				Rotate X axis:
+			</td>
+			<td>
+				<input type="text" id="xrotate" value="0" size="3">(degrees)
+			</td>
+			<td style="text-align:right;padding:1px;">
+				Translate X axis:
+			</td>
+			<td>
+				<input type="text" id="xtranslate" value="0" size="3">(units)
+			</td>
+			</tr>
+			<tr>
+			<td style="text-align:right;padding:1px;">
+				Rotate Y axis:
+			</td>
+			<td>
+				<input type="text" id="yrotate" value="0" size="3">(degrees)
+			</td>
+			<td style="text-align:right;padding:1px;">
+				Translate Y axis:
+			</td>
+			<td>
+				<input type="text" id="ytranslate" value="0" size="3">(units)
+			</td>
+
+			</tr>
+			<tr>
+			<td style="text-align:right;padding:1px;">
+				Rotate Z axis:
+			</td>
+			<td>
+				<input type="text" id="zrotate" value="0" size="3">(degrees)
+			</td>
+			<td style="text-align:right;padding:1px;">
+				Translate Z axis:
+			</td>
+			<td>
+				<input type="text" id="ztranslate" value="0" size="3">(units)
+			</td>		
+			</tr>
+			<tr>
+			<td style="text-align:right;padding:1px;">
+				Zoom:
+			</td>
+			<td colspan="3">
+				<input type="text" id="zoom" value="1" size="3">(units)
+			</td>
+			</tr>
+			<tr>
+			<td colspan="4" align="center" style="padding:2px;background-color:#cccccc">
+				<input id="submit" type="button" onclick="validate();" value="Send">
+			</td>
+			</tr>
+		</table>
+	</div>
+	<div id="batch" style="display:none">
+		<table id="command" border="0" cellpadding="0" cellspacing="1" style="border:1px solid blue;">
+			<tr>
+			<td colspan="2" style="background-color:#999999;padding:2px;text-align:center;font-weight:bold;">
+				Command Menu for Controlling the Remote Graphic Application   
+			</td>
+			</tr>
+			
+			<tr>
+				<td colspan="2" style="background-color:#999999;padding:2px;text-align:center;font-weight:bold;">
+					<textarea cols="30" rows="10" id="batchtext" onkeydown="return insertTab(event,this);" onkeyup="return insertTab(event,this);" onkeypress="return insertTab(event,this);"></textarea>
+				</td>
+			</tr>
+				<td colspan="1" align="center" style="padding:2px;background-color:#cccccc">
+					<input id="addtaskitem" type="button" onclick="addBatch();" value="Add task item">
+				</td>
+				<td colspan="1" align="center" style="padding:2px;background-color:#cccccc">
+					<input id="submitBatch" type="button" onclick="validateBatch();" value="Send batch">
+				</td>
+			</tr>
+		</table>
+	</div>
+		<table id="display" border="0" cellpadding="0" cellspacing="0">
+		</table>
+
+  </body>
+</html>
