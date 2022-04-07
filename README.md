@@ -1,5 +1,5 @@
 # RemoteGraphicsControl
-A simple way to remotely control your OpenGL/DirectX application through AJAX, XML, and PHP and visualize the results on your HTML page. This project was part of *my first ever published research paper in computer science as single author back in 2007*. You can find the full paper on [Remote Control for Graphic Applications](https://ieeexplore.ieee.org/document/4438114). It was followed by a generalized solution [On Designing an Asynchronous and Dynamic Platform for Solving Single Task Requests of Remote Applications](https://ieeexplore.ieee.org/abstract/document/4591338).
+A simple way to remotely control your OpenGL/DirectX application through AJAX, XML, and PHP and visualize the results on your HTML page. This project was part of *my first ever published research paper in computer science as single author back in 2007*. You can find the full paper on [Remote Control for Graphic Applications](https://ieeexplore.ieee.org/document/4438114). It was followed in 2008 by a generalized solution [On Designing an Asynchronous and Dynamic Platform for Solving Single Task Requests of Remote Applications](https://ieeexplore.ieee.org/abstract/document/4591338).
 
 ## Code
 
